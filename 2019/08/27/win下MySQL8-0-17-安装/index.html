@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content>
+  <meta name="author" content="pinna">
+  <meta name="keywords" content>
+  <title>win下 MySQL 8.0.17 安装 ~ Pinna&#39;s blog</title>
+  <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/lib/mdbootstrap/css/mdb.min.css">
+  <link rel="stylesheet" href="/lib/github-markdown/github-markdown.min.css">
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
+  
+    <link rel="stylesheet" href="/lib/prettify/tomorrow-night-eighties.min.css">
+  
+  <link rel="stylesheet" href="/css/main.css">
+
+  
+</head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Pinna&#39;s blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/archives/">Archives</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/categories/">Categories</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/tags/">Tags</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/about/">About</a>
+          </li>
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+</nav>
+
+    <div class="view intro-2"
+         style="background: url('/img/default.png')no-repeat center center;
+           background-size: cover;
+           background-attachment: fixed;">
+      <div class="full-bg-img">
+        <div class="mask rgba-black-light flex-center">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              <br>
+              <p>星期二, 八月 27日 2019, 11:17 晚上</p>
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        <div class="post-content mx-auto">
+          <div class="markdown-body">
+            <h1 id="win下-MySQL-8-0-17-安装"><a href="#win下-MySQL-8-0-17-安装" class="headerlink" title="win下 MySQL 8.0.17 安装"></a>win下 MySQL 8.0.17 安装</h1><h4 id="1、在官网下载MySQL"><a href="#1、在官网下载MySQL" class="headerlink" title="1、在官网下载MySQL"></a>1、在官网下载MySQL</h4><p>地址如下 <a href="https://dev.mysql.com/downloads/mysql/" target="_blank" rel="noopener">https://dev.mysql.com/downloads/mysql/</a></p>
+<p>我下载的是64位系统的zip包。下载后解压地址：D:\Mysql</p>
+<h4 id="2、配置环境变量"><a href="#2、配置环境变量" class="headerlink" title="2、配置环境变量"></a>2、配置环境变量</h4><ul>
+<li><p>添加<strong>系统变量</strong></p>
+<pre><code>变量名：MYSQL_HOME
+变量值：D:\mysql-8.0.17-winx64</code></pre></li>
+</ul>
+<p>在其他博客里看到要在path里添加%MYSQL_HOME%\bin;，不过我没有添加也成功安装，暂时没有出现什么问题。</p>
+<h4 id="3、新建配置文件"><a href="#3、新建配置文件" class="headerlink" title="3、新建配置文件"></a>3、新建配置文件</h4><p>在D:\Mysql\mysql-8.0.17-winx64目录下新建my.ini配置文件，并将以下内容复制粘贴进去。<br>注意里面有两个需要修改的地方：<strong>mysql安装目录</strong>和<strong>mysql数据库的数据存放目录</strong>。</p>
+<p>其中，mysql安装目录就是刚才zip包解压的目录，也就是MySQL的安装路径，在这里是D:\Mysql\mysql-8.0.17-winx64，数据库的数据存放目录指的是MySQL的数据库文件放在什么路径下，这里的目录会在接下来的配置中自动生成，如这里的D:\MySQL\Database，接下来会在D:\MySQL下自动生成Database目录。</p>
+<pre><code>[mysqld]
+# 设置3306端口
+port=3306
+# 设置mysql的安装目录
+basedir=D:\MySQL\mysql-8.0.16-winx64
+# 设置mysql数据库的数据的存放目录
+datadir=D:\MySQL\Database
+# 允许最大连接数
+max_connections=200
+# 允许连接失败的次数。这是为了防止有人从该主机试图攻击数据库系统
+max_connect_errors=10
+# 服务端使用的字符集默认为UTF8
+character-set-server=UTF8MB4
+# 创建新表时将使用的默认存储引擎
+default-storage-engine=INNODB
+# 默认使用“mysql_native_password”插件认证
+default_authentication_plugin=mysql_native_password
+[mysql]
+# 设置mysql客户端默认字符集
+default-character-set=utf8
+[client]
+# 设置mysql客户端连接服务端时默认使用的端口
+port=3306
+default-character-set=utf8</code></pre><p>若在配置之前Database目录就已经存在，可能会报Warning的错，将目录删掉或修改my.ini文件中的目录，重新配置一下就好了。</p>
+<h4 id="4、自动生成MySQL初始化配置文件"><a href="#4、自动生成MySQL初始化配置文件" class="headerlink" title="4、自动生成MySQL初始化配置文件"></a>4、自动生成MySQL初始化配置文件</h4><p>以<strong>管理员身份</strong>打开cmd，在MySQL安装目录的bin目录下执行命令：</p>
+<p><code>mysqld --initialize --console</code><br>初始化配置文件</p>
+<p>记得截图保存下打印下来的东西：</p>
+<p><img src="/img/1.jpg" srcset="/img/loading.gif" alt></p>
+<p>画横线的就是登陆时的密码，接下来登陆数据库时需要用到</p>
+<p>如果不小心关掉了= = ，只需要删掉data目录，然后重新执行一遍初始化命令，又会重新生成</p>
+<h4 id="5、安装服务"><a href="#5、安装服务" class="headerlink" title="5、安装服务"></a>5、安装服务</h4><p>在MySQL安装目录的bin目录下执行命令：</p>
+<p><code>mysqld --install [服务名]</code><br>服务名指的是给服务命名，可以不写，默认为mysql。</p>
+<p>如果电脑上需要安装多个MySQL服务，就可以用不同的名字区分，如mysql1,mysql2</p>
+<h4 id="6、启动、停止服务与登录"><a href="#6、启动、停止服务与登录" class="headerlink" title="6、启动、停止服务与登录"></a>6、启动、停止服务与登录</h4><p><code>net start mysql</code>    启动MySQL服务<br><code>net stop mysql</code>    停止服务<br><code>mysql -u root -p</code>    登录：这时候会提示输入密码，输入上面初始化时生成的密码，即可成功登录</p>
+<p>若提示<strong>「发生系统错误5 拒绝访问」</strong> fuhao，则用管理员身份打开cmd，重新输入命令即可。</p>
+<h4 id="7、修改密码"><a href="#7、修改密码" class="headerlink" title="7、修改密码"></a>7、修改密码</h4><p>在登录后执行命令：</p>
+<p><code>ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED WITH mysql_native_password BY &#39;新密码&#39;</code></p>
+
+            <hr>
+          </div>
+          <br>
+          <div>
+            
+            <p>
+              <i class="iconfont icon-tag"></i>
+              
+                <a class="hover-with-bg" href="/tags/MySQL%20%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B">MySQL 安装教程</a>
+              
+            </p>
+            
+              <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" rel="nofollow noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-none d-lg-block col-lg-2 toc-container">
+      
+  <div id="toc">
+    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;目录</p>
+    <div id="tocbot"></div>
+  </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- custom -->
+
+
+<!-- Comments -->
+<div class="col-lg-7 mx-auto nopadding-md">
+  <div class="container comments mx-auto" id="comments">
+    
+  </div>
+</div>
+
+    
+  </main>
+
+  
+    <a class="z-depth-1" id="scroll-top-button" href="#" role="button">
+      <i class="fa fa-chevron-up scroll-top-arrow" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>Hexo</b></a>
+    <i class="iconfont icon-love"></i>
+    <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <b>Fluid</b></a>
+    <br>
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="/lib/jquery/jquery.min.js" ></script>
+<script src="/lib/popper/popper.min.js" ></script>
+<script src="/lib/bootstrap/js/bootstrap.min.js" ></script>
+<script src="/lib/mdbootstrap/js/mdb.min.js" ></script>
+<script src="/js/main.js" ></script>
+
+  <script src="/js/lazyload.js" ></script>
+
+
+  
+    <script src="/lib/tocbot/tocbot.min.js" ></script>
+  
+  <script src="/js/post.js" ></script>
+
+
+  <script src="/lib/prettify/prettify.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      $('pre').addClass('prettyprint linenums');
+      prettyPrint();
+    })
+  </script>
+
+
+  <script src="/lib/typed/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "win下 MySQL 8.0.17 安装&nbsp;",
+      ],
+      cursorChar: "❤",
+      typeSpeed: 10,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+  <script src="/lib/anchor/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "false",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      getSearchFile(path);
+      this.onclick = null
+    }
+  </script>
+
+
+</body>
+</html>
