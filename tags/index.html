@@ -14,7 +14,7 @@
   <meta name="description" content>
   <meta name="author" content="pinna">
   <meta name="keywords" content>
-  <title>Pinna&#39;s blog</title>
+  <title>标签 ~ Pinna&#39;s blog</title>
   <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
   <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="/lib/mdbootstrap/css/mdb.min.css">
@@ -30,7 +30,7 @@
 
 
 <body>
-  <header style="height: 100vh;">
+  <header style="height: 80vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -104,10 +104,6 @@
           </div>
 
           
-            <div class="scroll-down-bar">
-              <i class="fa fa-angle-down scroll-down-arrow"></i>
-            </div>
-          
         </div>
       </div>
     </div>
@@ -123,164 +119,9 @@
               <div class="col-12 col-md-10 m-auto">
                 
 
-
-  <div class="row mb-4 mx-auto">
-    
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/10/03/win下 MySQL 8.0.17 安装/">
-        <p class="h4 index-header"></p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">win下 MySQL 8.0.17 安装1、在官网下载MySQL地址如下 https://dev.mysql.com/downloads/mysql/
-我下载的是64位系统的zip包。下载后解压地址：D:\Mysql
-2、配置环境变量
-添加系统变量
-  变量名：MYSQL_HOME
-  变量值：D:\mysql-8.0.17-winx64
-
-在其他博客里看到要在path里添加%MYSQL_HOME%\bin;，不过我没有添加也成功安装，暂时没有出现什么问题。
-3、新建配置文件在D:\Mysql\mysql-8.0.17-winx64目录下新建my.ini配置文件，并将以下内容复制粘贴进去。注意里面有两个需要修改的地方：mysql安装目录和mysql数据库的数据存放目录。
-其中，mysql安装目录就是刚才zip包解压的目录，也就是MySQL的安装路径，在这里是D:\Mysql\mysql-8.0.17-winx64，数据库的数据存放目录指的是MySQL的数据库文件放在什么路径下，这里的目录会在接下来的配置中自动生成，如这里的D:\MySQL\Database，接下来会在D:\MySQL下</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-10-03&nbsp;&nbsp;
-        
-        
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/10/03/Markdown/">
-        <p class="h4 index-header"></p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">Markdown+Typora基本语法
-
-
-名称
-Markdown
-快捷键
-
-
-
-粗体
-**粗体**
-Ctrl+B
-
-
-斜体
-*斜体*
-Ctrl+I
-
-
-粗斜体
-***粗斜体***
-
-
-
-删除
-~~删除~~
-Ctrl+Shift+5
-
-
-下划线
-&lt;u&gt;下划线&lt;/u&gt;
-Ctrl+U
-
-
-文本[^脚注]
-[^脚注]
-
-
-
-分割线
-***或---
-
-
-
-列表
-*或-
-
-
-
-区块
-&gt;
-
-
-
-代码printf()
-``
-Ctrl+Shift+`
-
-
-代码块
-```
-
-
-
-隐式链接
-[链接名称](链接地址)
-Ctrl+K
-
-
-显式链接
-&lt;链接地址&gt;
-Ctrl+Shift+K
-
-
-插入图片
-![图片名称](图片地址)
-Ctrl+Shift+I
-
-
-插入表格
-`
-分隔单元格，-分隔表头和其他行`
-
-
-转义符号
-\
-
-
-
-插入emoji:heart:
-:emoji
-
-
-
+<div class="text-center tagcloud">
+  
 </div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-10-03&nbsp;&nbsp;
-        
-        
-        
-      </div>
-    </div>
-  </div>
-
-
-
-
-
               </div>
             </div>
           </div>
@@ -354,7 +195,7 @@ Ctrl+Shift+I
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "&nbsp;",
+        "标签&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,

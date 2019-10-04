@@ -1,103 +1,166 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
+
+
+
+
+
 <head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content>
+  <meta name="author" content="pinna">
+  <meta name="keywords" content>
+  <title>Pinna&#39;s blog</title>
+  <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/lib/mdbootstrap/css/mdb.min.css">
+  <link rel="stylesheet" href="/lib/github-markdown/github-markdown.min.css">
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
   
+    <link rel="stylesheet" href="/lib/prettify/tomorrow-night-eighties.min.css">
+  
+  <link rel="stylesheet" href="/css/main.css">
 
   
-  <title>Pinna&#39;s blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="win下 MySQL 8.0.17 安装1、在官网下载MySQL地址如下 https://dev.mysql.com/downloads/mysql/ 我下载的是64位系统的zip包。下载后解压地址：D:\Mysql 2、配置环境变量 添加系统变量   12变量名：MYSQL_HOME变量值：D:\mysql-8.0.17-winx64      在其他博客里看到要在path里添加%MYSQL_H">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Pinna&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/2019/10/03/win下 MySQL 8.0.17 安装/index.html">
-<meta property="og:site_name" content="Pinna&#39;s blog">
-<meta property="og:description" content="win下 MySQL 8.0.17 安装1、在官网下载MySQL地址如下 https://dev.mysql.com/downloads/mysql/ 我下载的是64位系统的zip包。下载后解压地址：D:\Mysql 2、配置环境变量 添加系统变量   12变量名：MYSQL_HOME变量值：D:\mysql-8.0.17-winx64      在其他博客里看到要在path里添加%MYSQL_H">
-<meta property="og:locale" content="en">
-<meta property="og:image" content="http://yoursite.com/2019/10/03/win下%20MySQL%208.0.17%20安装/assets/1.jpg">
-<meta property="og:updated_time" content="2019-09-09T11:56:14.480Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Pinna&#39;s blog">
-<meta name="twitter:description" content="win下 MySQL 8.0.17 安装1、在官网下载MySQL地址如下 https://dev.mysql.com/downloads/mysql/ 我下载的是64位系统的zip包。下载后解压地址：D:\Mysql 2、配置环境变量 添加系统变量   12变量名：MYSQL_HOME变量值：D:\mysql-8.0.17-winx64      在其他博客里看到要在path里添加%MYSQL_H">
-<meta name="twitter:image" content="http://yoursite.com/2019/10/03/win下%20MySQL%208.0.17%20安装/assets/1.jpg">
-  
-    <link rel="alternate" href="/atom.xml" title="Pinna&#39;s blog" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
 </head>
-</html>
+
+
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Pinna&#39;s blog</a>
-      </h1>
-      
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Pinna&#39;s blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/archives/">Archives</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/categories/">Categories</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/tags/">Tags</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/about/">About</a>
+          </li>
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+  </div>
+
+
+</nav>
+
+    <div class="view intro-2"
+         style="background: url('/img/default.png')no-repeat center center;
+           background-size: cover;
+           background-attachment: fixed;">
+      <div class="full-bg-img">
+        <div class="mask rgba-black-light flex-center">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              <br>
+              <p>星期四, 十月 3日 2019, 9:51 晚上</p>
+            
+          </div>
+
+          
+        </div>
       </div>
     </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-win下 MySQL 8.0.17 安装" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/10/03/win下 MySQL 8.0.17 安装/" class="article-date">
-  <time datetime="2019-10-03T13:51:51.741Z" itemprop="datePublished">2019-10-03</time>
-</a>
+  </header>
+
+  <main>
     
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="win下-MySQL-8-0-17-安装"><a href="#win下-MySQL-8-0-17-安装" class="headerlink" title="win下 MySQL 8.0.17 安装"></a>win下 MySQL 8.0.17 安装</h1><h4 id="1、在官网下载MySQL"><a href="#1、在官网下载MySQL" class="headerlink" title="1、在官网下载MySQL"></a>1、在官网下载MySQL</h4><p>地址如下 <a href="https://dev.mysql.com/downloads/mysql/" target="_blank" rel="noopener">https://dev.mysql.com/downloads/mysql/</a></p>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        <div class="post-content mx-auto">
+          <div class="markdown-body">
+            <h1 id="win下-MySQL-8-0-17-安装"><a href="#win下-MySQL-8-0-17-安装" class="headerlink" title="win下 MySQL 8.0.17 安装"></a>win下 MySQL 8.0.17 安装</h1><h4 id="1、在官网下载MySQL"><a href="#1、在官网下载MySQL" class="headerlink" title="1、在官网下载MySQL"></a>1、在官网下载MySQL</h4><p>地址如下 <a href="https://dev.mysql.com/downloads/mysql/" target="_blank" rel="noopener">https://dev.mysql.com/downloads/mysql/</a></p>
 <p>我下载的是64位系统的zip包。下载后解压地址：D:\Mysql</p>
 <h4 id="2、配置环境变量"><a href="#2、配置环境变量" class="headerlink" title="2、配置环境变量"></a>2、配置环境变量</h4><ul>
 <li><p>添加<strong>系统变量</strong></p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">变量名：MYSQL_HOME</span><br><span class="line">变量值：D:\mysql-8.0.17-winx64</span><br></pre></td></tr></table></figure>
-
-
-
-</li>
+<pre><code>  变量名：MYSQL_HOME
+  变量值：D:\mysql-8.0.17-winx64</code></pre></li>
 </ul>
 <p>在其他博客里看到要在path里添加%MYSQL_HOME%\bin;，不过我没有添加也成功安装，暂时没有出现什么问题。</p>
 <h4 id="3、新建配置文件"><a href="#3、新建配置文件" class="headerlink" title="3、新建配置文件"></a>3、新建配置文件</h4><p>在D:\Mysql\mysql-8.0.17-winx64目录下新建my.ini配置文件，并将以下内容复制粘贴进去。<br>注意里面有两个需要修改的地方：<strong>mysql安装目录</strong>和<strong>mysql数据库的数据存放目录</strong>。</p>
 <p>其中，mysql安装目录就是刚才zip包解压的目录，也就是MySQL的安装路径，在这里是D:\Mysql\mysql-8.0.17-winx64，数据库的数据存放目录指的是MySQL的数据库文件放在什么路径下，这里的目录会在接下来的配置中自动生成，如这里的D:\MySQL\Database，接下来会在D:\MySQL下自动生成Database目录。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line"># 设置3306端口</span><br><span class="line">port=3306</span><br><span class="line"># 设置mysql的安装目录</span><br><span class="line">basedir=D:\MySQL\mysql-8.0.16-winx64</span><br><span class="line"># 设置mysql数据库的数据的存放目录</span><br><span class="line">datadir=D:\MySQL\Database</span><br><span class="line"># 允许最大连接数</span><br><span class="line">max_connections=200</span><br><span class="line"># 允许连接失败的次数。这是为了防止有人从该主机试图攻击数据库系统</span><br><span class="line">max_connect_errors=10</span><br><span class="line"># 服务端使用的字符集默认为UTF8</span><br><span class="line">character-set-server=UTF8MB4</span><br><span class="line"># 创建新表时将使用的默认存储引擎</span><br><span class="line">default-storage-engine=INNODB</span><br><span class="line"># 默认使用“mysql_native_password”插件认证</span><br><span class="line">default_authentication_plugin=mysql_native_password</span><br><span class="line">[mysql]</span><br><span class="line"># 设置mysql客户端默认字符集</span><br><span class="line">default-character-set=utf8</span><br><span class="line">[client]</span><br><span class="line"># 设置mysql客户端连接服务端时默认使用的端口</span><br><span class="line">port=3306</span><br><span class="line">default-character-set=utf8</span><br></pre></td></tr></table></figure>
-
-<p>若在配置之前Database目录就已经存在，可能会报Warning的错，将目录删掉或修改my.ini文件中的目录，重新配置一下就好了。</p>
+<pre><code>[mysqld]
+# 设置3306端口
+port=3306
+# 设置mysql的安装目录
+basedir=D:\MySQL\mysql-8.0.16-winx64
+# 设置mysql数据库的数据的存放目录
+datadir=D:\MySQL\Database
+# 允许最大连接数
+max_connections=200
+# 允许连接失败的次数。这是为了防止有人从该主机试图攻击数据库系统
+max_connect_errors=10
+# 服务端使用的字符集默认为UTF8
+character-set-server=UTF8MB4
+# 创建新表时将使用的默认存储引擎
+default-storage-engine=INNODB
+# 默认使用“mysql_native_password”插件认证
+default_authentication_plugin=mysql_native_password
+[mysql]
+# 设置mysql客户端默认字符集
+default-character-set=utf8
+[client]
+# 设置mysql客户端连接服务端时默认使用的端口
+port=3306
+default-character-set=utf8</code></pre><p>若在配置之前Database目录就已经存在，可能会报Warning的错，将目录删掉或修改my.ini文件中的目录，重新配置一下就好了。</p>
 <h4 id="4、自动生成MySQL初始化配置文件"><a href="#4、自动生成MySQL初始化配置文件" class="headerlink" title="4、自动生成MySQL初始化配置文件"></a>4、自动生成MySQL初始化配置文件</h4><p>以<strong>管理员身份</strong>打开cmd，在MySQL安装目录的bin目录下执行命令：</p>
 <p><code>mysqld --initialize --console</code><br>初始化配置文件</p>
 <p>记得截图保存下打印下来的东西：</p>
-<p><img src="assets/1.jpg" alt></p>
+<p><img src="assets/1.jpg" srcset="/img/loading.gif" alt></p>
 <p>画横线的就是登陆时的密码，接下来登陆数据库时需要用到</p>
 <p>如果不小心关掉了= = ，只需要删掉data目录，然后重新执行一遍初始化命令，又会重新生成</p>
 <h4 id="5、安装服务"><a href="#5、安装服务" class="headerlink" title="5、安装服务"></a>5、安装服务</h4><p>在MySQL安装目录的bin目录下执行命令：</p>
@@ -108,103 +171,157 @@
 <h4 id="7、修改密码"><a href="#7、修改密码" class="headerlink" title="7、修改密码"></a>7、修改密码</h4><p>在登录后执行命令：</p>
 <p><code>ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED WITH mysql_native_password BY &#39;新密码&#39;</code></p>
 
-      
+            <hr>
+          </div>
+          <br>
+          <div>
+            
+            <p>
+              <i class="iconfont icon-tag"></i>
+              
+            </p>
+            
+              <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" rel="nofollow noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
+            
+          </div>
+        </div>
+      </div>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/03/win下 MySQL 8.0.17 安装/" data-id="ck1aro45u00013wvsijmz6mk7" class="article-share-link">Share</a>
+    <div class="d-none d-lg-block col-lg-2 toc-container">
       
-      
-    </footer>
+  <div id="toc">
+    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;目录</p>
+    <div id="tocbot"></div>
   </div>
-  
+
+    </div>
+  </div>
+</div>
+
+<!-- custom -->
+
+
+<!-- Comments -->
+<div class="col-lg-7 mx-auto nopadding-md">
+  <div class="container comments mx-auto" id="comments">
     
-<nav id="article-nav">
+  </div>
+</div>
+
+    
+  </main>
+
   
-  
-    <a href="/2019/10/03/Markdown/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title"></div>
+    <a class="z-depth-1" id="scroll-top-button" href="#" role="button">
+      <i class="fa fa-chevron-up scroll-top-arrow" aria-hidden="true"></i>
     </a>
   
-</nav>
 
   
-</article>
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2019/10/03/win下 MySQL 8.0.17 安装/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/10/03/Markdown/">(no title)</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2019 pinna<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
     </div>
+  </div>
+</div>
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>Hexo</b></a>
+    <i class="iconfont icon-love"></i>
+    <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <b>Fluid</b></a>
+    <br>
+    
   </div>
 </footer>
-    </div>
-    <nav id="mobile-nav">
+
+<!-- SCRIPTS -->
+<script src="/lib/jquery/jquery.min.js" ></script>
+<script src="/lib/popper/popper.min.js" ></script>
+<script src="/lib/bootstrap/js/bootstrap.min.js" ></script>
+<script src="/lib/mdbootstrap/js/mdb.min.js" ></script>
+<script src="/js/main.js" ></script>
+
+  <script src="/js/lazyload.js" ></script>
+
+
   
-    <a href="/" class="mobile-nav-link">Home</a>
+    <script src="/lib/tocbot/tocbot.min.js" ></script>
   
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script src="/js/post.js" ></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <script src="/lib/prettify/prettify.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      $('pre').addClass('prettyprint linenums');
+      prettyPrint();
+    })
+  </script>
 
 
-<script src="/js/script.js"></script>
+  <script src="/lib/typed/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+  <script src="/lib/anchor/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "false",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
 
 
 
-  </div>
+  <script src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      getSearchFile(path);
+      this.onclick = null
+    }
+  </script>
+
+
 </body>
 </html>

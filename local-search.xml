@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="undefined2019/10/03/win%E4%B8%8B%20MySQL%208.0.17%20%E5%AE%89%E8%A3%85/"/>
+    <url>2019/10/03/win%E4%B8%8B%20MySQL%208.0.17%20%E5%AE%89%E8%A3%85/</url>
+    
+    <content type="html"><![CDATA[<h1 id="win下-MySQL-8-0-17-安装"><a href="#win下-MySQL-8-0-17-安装" class="headerlink" title="win下 MySQL 8.0.17 安装"></a>win下 MySQL 8.0.17 安装</h1><h4 id="1、在官网下载MySQL"><a href="#1、在官网下载MySQL" class="headerlink" title="1、在官网下载MySQL"></a>1、在官网下载MySQL</h4><p>地址如下 <a href="https://dev.mysql.com/downloads/mysql/" target="_blank" rel="noopener">https://dev.mysql.com/downloads/mysql/</a></p><p>我下载的是64位系统的zip包。下载后解压地址：D:\Mysql</p><h4 id="2、配置环境变量"><a href="#2、配置环境变量" class="headerlink" title="2、配置环境变量"></a>2、配置环境变量</h4><ul><li><p>添加<strong>系统变量</strong></p><pre><code>  变量名：MYSQL_HOME  变量值：D:\mysql-8.0.17-winx64</code></pre></li></ul><p>在其他博客里看到要在path里添加%MYSQL_HOME%\bin;，不过我没有添加也成功安装，暂时没有出现什么问题。</p><h4 id="3、新建配置文件"><a href="#3、新建配置文件" class="headerlink" title="3、新建配置文件"></a>3、新建配置文件</h4><p>在D:\Mysql\mysql-8.0.17-winx64目录下新建my.ini配置文件，并将以下内容复制粘贴进去。<br>注意里面有两个需要修改的地方：<strong>mysql安装目录</strong>和<strong>mysql数据库的数据存放目录</strong>。</p><p>其中，mysql安装目录就是刚才zip包解压的目录，也就是MySQL的安装路径，在这里是D:\Mysql\mysql-8.0.17-winx64，数据库的数据存放目录指的是MySQL的数据库文件放在什么路径下，这里的目录会在接下来的配置中自动生成，如这里的D:\MySQL\Database，接下来会在D:\MySQL下自动生成Database目录。</p><pre><code>[mysqld]# 设置3306端口port=3306# 设置mysql的安装目录basedir=D:\MySQL\mysql-8.0.16-winx64# 设置mysql数据库的数据的存放目录datadir=D:\MySQL\Database# 允许最大连接数max_connections=200# 允许连接失败的次数。这是为了防止有人从该主机试图攻击数据库系统max_connect_errors=10# 服务端使用的字符集默认为UTF8character-set-server=UTF8MB4# 创建新表时将使用的默认存储引擎default-storage-engine=INNODB# 默认使用“mysql_native_password”插件认证default_authentication_plugin=mysql_native_password[mysql]# 设置mysql客户端默认字符集default-character-set=utf8[client]# 设置mysql客户端连接服务端时默认使用的端口port=3306default-character-set=utf8</code></pre><p>若在配置之前Database目录就已经存在，可能会报Warning的错，将目录删掉或修改my.ini文件中的目录，重新配置一下就好了。</p><h4 id="4、自动生成MySQL初始化配置文件"><a href="#4、自动生成MySQL初始化配置文件" class="headerlink" title="4、自动生成MySQL初始化配置文件"></a>4、自动生成MySQL初始化配置文件</h4><p>以<strong>管理员身份</strong>打开cmd，在MySQL安装目录的bin目录下执行命令：</p><p><code>mysqld --initialize --console</code><br>初始化配置文件</p><p>记得截图保存下打印下来的东西：</p><p><img src="assets/1.jpg" srcset="/img/loading.gif" alt></p><p>画横线的就是登陆时的密码，接下来登陆数据库时需要用到</p><p>如果不小心关掉了= = ，只需要删掉data目录，然后重新执行一遍初始化命令，又会重新生成</p><h4 id="5、安装服务"><a href="#5、安装服务" class="headerlink" title="5、安装服务"></a>5、安装服务</h4><p>在MySQL安装目录的bin目录下执行命令：</p><p><code>mysqld --install [服务名]</code><br>服务名指的是给服务命名，可以不写，默认为mysql。</p><p>如果电脑上需要安装多个MySQL服务，就可以用不同的名字区分，如mysql1,mysql2</p><h4 id="6、启动、停止服务与登录"><a href="#6、启动、停止服务与登录" class="headerlink" title="6、启动、停止服务与登录"></a>6、启动、停止服务与登录</h4><p><code>net start mysql</code>    启动MySQL服务<br><code>net stop mysql</code>    停止服务<br><code>mysql -u root -p</code>    登录：这时候会提示输入密码，输入上面初始化时生成的密码，即可成功登录</p><p>若提示<strong>「发生系统错误5 拒绝访问」</strong> fuhao，则用管理员身份打开cmd，重新输入命令即可。</p><h4 id="7、修改密码"><a href="#7、修改密码" class="headerlink" title="7、修改密码"></a>7、修改密码</h4><p>在登录后执行命令：</p><p><code>ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED WITH mysql_native_password BY &#39;新密码&#39;</code></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="undefined2019/10/03/Markdown/"/>
+    <url>2019/10/03/Markdown/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Markdown-Typora"><a href="#Markdown-Typora" class="headerlink" title="Markdown+Typora"></a>Markdown+Typora</h1><h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><table><thead><tr><th align="center">名称</th><th align="center">Markdown</th><th align="center">快捷键</th></tr></thead><tbody><tr><td align="center"><strong>粗体</strong></td><td align="center"><code>**粗体**</code></td><td align="center">Ctrl+B</td></tr><tr><td align="center"><em>斜体</em></td><td align="center"><code>*斜体*</code></td><td align="center">Ctrl+I</td></tr><tr><td align="center"><strong><em>粗斜体</em></strong></td><td align="center"><code>***粗斜体***</code></td><td align="center"></td></tr><tr><td align="center"><del>删除</del></td><td align="center"><code>~~删除~~</code></td><td align="center">Ctrl+Shift+5</td></tr><tr><td align="center"><u>下划线</u></td><td align="center"><code>&lt;u&gt;下划线&lt;/u&gt;</code></td><td align="center">Ctrl+U</td></tr><tr><td align="center">文本[^脚注]</td><td align="center"><code>[^脚注]</code></td><td align="center"></td></tr><tr><td align="center">分割线</td><td align="center"><code>***或---</code></td><td align="center"></td></tr><tr><td align="center">列表</td><td align="center"><code>*或-</code></td><td align="center"></td></tr><tr><td align="center">区块</td><td align="center"><code>&gt;</code></td><td align="center"></td></tr><tr><td align="center">代码<code>printf()</code></td><td align="center">``</td><td align="center">Ctrl+Shift+`</td></tr><tr><td align="center">代码块</td><td align="center">```</td><td align="center"></td></tr><tr><td align="center">隐式链接</td><td align="center"><code>[链接名称](链接地址)</code></td><td align="center">Ctrl+K</td></tr><tr><td align="center">显式链接</td><td align="center"><code>&lt;链接地址&gt;</code></td><td align="center">Ctrl+Shift+K</td></tr><tr><td align="center">插入图片</td><td align="center"><code>![图片名称](图片地址)</code></td><td align="center">Ctrl+Shift+I</td></tr><tr><td align="center">插入表格</td><td align="center">`</td><td align="center">分隔单元格，-分隔表头和其他行`</td></tr><tr><td align="center">转义符号</td><td align="center">\</td><td align="center"></td></tr><tr><td align="center">插入emoji:heart:</td><td align="center"><code>:emoji</code></td><td align="center"></td></tr></tbody></table>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  
+</search>
