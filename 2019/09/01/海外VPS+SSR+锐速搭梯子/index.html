@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/girl.png">
+  <link rel="icon" type="image/png" href="/img/girl.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content>
+  <meta name="author" content="pinna">
+  <meta name="keywords" content>
+  <title>海外VPS+SSR+锐速搭梯子 ~ Pinna&#39;s blog</title>
+  <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/lib/mdbootstrap/css/mdb.min.css">
+  <link rel="stylesheet" href="/lib/github-markdown/github-markdown.min.css">
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
+  
+    <link rel="stylesheet" href="/lib/prettify/tomorrow-night-eighties.min.css">
+  
+  <link rel="stylesheet" href="/css/main.css">
+
+  
+</head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Pinna&#39;s blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/archives/">Archives</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/tags/">Tags</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/about/">About</a>
+          </li>
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+</nav>
+
+    <div class="view intro-2"
+         style="background: url('/img/school.png')no-repeat center center;
+           background-size: cover;
+           background-attachment: fixed;">
+      <div class="full-bg-img">
+        <div class="mask rgba-black-light flex-center">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              <br>
+              <p>星期日, 九月 1日 2019, 1:15 下午</p>
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        <div class="post-content mx-auto">
+          <div class="markdown-body">
+            <h1 id="海外VPS-SSR-锐速搭梯子"><a href="#海外VPS-SSR-锐速搭梯子" class="headerlink" title="海外VPS+SSR+锐速搭梯子"></a>海外VPS+SSR+锐速搭梯子</h1><h3 id="先了解一些概念"><a href="#先了解一些概念" class="headerlink" title="先了解一些概念"></a>先了解一些概念</h3><p><strong>VPN(Virtual Private Network)</strong></p>
+<p>虚拟专用网络。指在公网上建立专用网络的技术，它通过特殊的加密的通讯协议建立专有的通讯线路。通俗来讲VPN就是专用通道，<strong>用来加密传输数据</strong>。<br>许多人认为VPN就是用来翻墙的工具，其实这只是它的一种用法而已。VPN被广泛应用在企业网络中，多用于大型企业的远程办公和高校之间的加密通讯。</p>
+<p><strong>VPS (Virtual Private Server)</strong> </p>
+<p>虚拟私有服务器。VPS是其实是一种技术，将一个整体的服务器分割成多个虚拟服务器。每个都可分配独立的IP、操作系统等资源。</p>
+<p><strong>SS / SSR</strong></p>
+<p>SS (Shadowsocks)是一种基于Sockets5代理方式的加密传输协议，SSR (ShadowsocksR)是ss的一个分支版本，在ss的基础上增加了数据混淆方式。ss/ssr都是sockets5代理，只<strong>简单地传输数据包，不关心何种传输协议</strong>。它抗干扰性强，能够穿透防火墙，而且对流量做了混淆，避免被防火墙识别并拦截。</p>
+<p><strong>ssh</strong></p>
+<p>连接vps的工具</p>
+<h3 id="做出选择"><a href="#做出选择" class="headerlink" title="做出选择"></a>做出选择</h3><ul>
+<li>vps服务商选择搬瓦工、Vultr、Lindo、Hostwinds还是AWS？</li>
+<li>服务器地址选择哪个国家？</li>
+<li>VPS的框架选择Openvz、KVM还是XEN？</li>
+<li>服务器的操作系统选择人Ubuntu、CentOS还是Debian？</li>
+<li>加速选择锐速、TCP BBR、Final Speed还是Google BBR?</li>
+<li>用SS还是SSR？</li>
+</ul>
+<p><strong>我做出的选择</strong>分别是：Vultr、美国、KVM、Ubuntu、锐速、SSR</p>
+<p>选择Vultr的原因是学生党又穷又乖，Vultr目前最便宜的是</p>
+<p>选择</p>
+<h3 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h3><p>下载地址：</p>
+<p>SSR ：<a href="https://ssr.tools/175" target="_blank" rel="noopener">https://ssr.tools/175</a><br>finalShell：<a href="http://www.hostbuf.com" target="_blank" rel="noopener">http://www.hostbuf.com</a></p>
+<h3 id="购买VPS"><a href="#购买VPS" class="headerlink" title="购买VPS"></a>购买VPS</h3><h5 id="1、选择服务"><a href="#1、选择服务" class="headerlink" title="1、选择服务"></a>1、选择服务</h5><p><img src="/img/vps.png" srcset="/img/loading.gif" alt="1568116383588"></p>
+<h5 id="2、选择节点位置"><a href="#2、选择节点位置" class="headerlink" title="2、选择节点位置"></a>2、选择节点位置</h5><p><img src="/img/2.png" srcset="/img/loading.gif" alt="img"></p>
+<h5 id="3、选择系统"><a href="#3、选择系统" class="headerlink" title="3、选择系统"></a>3、选择系统</h5><p><img src="/img/3.png" srcset="/img/loading.gif" alt="1568116524541"></p>
+<h5 id="4、选择套餐"><a href="#4、选择套餐" class="headerlink" title="4、选择套餐"></a>4、选择套餐</h5><p><img src="/img/4.png" srcset="/img/loading.gif" alt="1568116563278"></p>
+<h5 id="5、其它选项"><a href="#5、其它选项" class="headerlink" title="5、其它选项"></a>5、其它选项</h5><p>比如IPV6，私密，域名，标签等，默认即可。</p>
+<h5 id="6、修改主机名"><a href="#6、修改主机名" class="headerlink" title="6、修改主机名"></a>6、修改主机名</h5><p><img src="/img/5.png" srcset="/img/loading.gif" alt="1568116944296"></p>
+<h5 id="7、点击下方”Deploy-Now“"><a href="#7、点击下方”Deploy-Now“" class="headerlink" title="7、点击下方”Deploy Now“"></a>7、点击下方”<strong>Deploy Now</strong>“</h5><p>然后就可以看到自己刚刚创建的vps</p>
+<p><img src="/img/6.png" srcset="/img/loading.gif" alt="1568120207186"></p>
+<p>记录下<strong>IP地址（IP Address）,用户名（Username）,密码（Password）</strong>，在稍后连接时使用</p>
+<h3 id="连接vps"><a href="#连接vps" class="headerlink" title="连接vps"></a>连接vps</h3><p>在参考了许多资料后，决定选择Xshell 5作为ssh工具连接vps。</p>
+<p>但是在安装过程中出现了问题：<br><img src="/img/7.png" srcset="/img/loading.gif" alt="1568280555580"></p>
+<p>我尝试了清理临时文件夹；清理电脑磁盘空间；重新写入系统环境变量、用户变量；重新设置临时文件夹路径；木马查杀；尝试修改临时文件夹权限……等等一系列瞎操作，仍然无果，且没有在网上查到任何有用的解决方法。（哭哭  </p>
+<p>如果有朋友也碰到了这种问题并成功解决，或者知道除了上述方法还有什么方法，或者知道具体导致这种情况的原因，请联系我！非常感谢  :heart:</p>
+<p>无奈</p>
+<p>我选择finalShell作为ssh工具。成功下载、安装。</p>
+<h5 id="1、创建连接"><a href="#1、创建连接" class="headerlink" title="1、创建连接"></a>1、创建连接</h5><p><img src="/img/8.png" srcset="/img/loading.gif" alt="1568281712997"></p>
+<p>如图，填写主机，用户名，密码。（主机就是之前记下的IP地址）</p>
+<p>显示连接成功<br><img src="/img/9.png" srcset="/img/loading.gif" alt="1568282027218"></p>
+<h5 id="2、搭建shadowsocks"><a href="#2、搭建shadowsocks" class="headerlink" title="2、搭建shadowsocks"></a>2、搭建shadowsocks</h5><p>依次执行以下3条命令：</p>
+<pre><code>wget --no-check-certificate -O shadowsocks-all.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-all.sh
+
+chmod +x shadowsocks-all.sh
+
+./shadowsocks-all.sh 2&gt;&amp;1 | tee shadowsocks-all.log</code></pre><p>然后会有选项让你选择:</p>
+<p>(1)选择服务<br>输入2，选择SSR</p>
+<p><img src="/img/10.png" srcset="/img/loading.gif" alt="1568710848805"></p>
+<p><strong>然后会提示你输入密码，尽量一次输对，不要包含空格和backspace回退，这些也会被识别为字符。</strong><br>如果嫌麻烦可以直接回车，会自动设置默认密码：teddysun.com</p>
+<p>(2)选择加密（密文流）<br>输入12，选择chacha20</p>
+<p><img src="/img/11.png" srcset="/img/loading.gif" alt="1568711064331"></p>
+<p>(3)选择协议<br>输入3，选择auth_sha1_v4</p>
+<p><img src="/img/12.png" srcset="/img/loading.gif" alt="1568711105901"></p>
+<p>(4)出现一下一行，提示你按回车键继续</p>
+<p><img src="/img/13.png" srcset="/img/loading.gif" alt="1568711178051"></p>
+<p><strong>回车后会出现以下信息：（请截图保存，之后要用）</strong></p>
+<p><img src="/img/14.png" srcset="/img/loading.gif" alt="1568711980336"></p>
+<p>如果看到那行 <strong><u>Enjoy it!</u></strong> ，恭喜你配置成功，接下来可以使用SSR连接了。</p>
+<h3 id="连接SSR"><a href="#连接SSR" class="headerlink" title="连接SSR"></a>连接SSR</h3><p>打开下载好的客户端，将上面的记录的相关信息填入客户端，点击确定。<br><img src="/img/15.png" srcset="/img/loading.gif" alt="1568712034796"></p>
+<p>然后会在你的任务栏看到一只小飞机。点击“启动”</p>
+<p><img src="/img/16.png" srcset="/img/loading.gif" alt="1568712034796"></p>
+<p>直连模式：不启用代理<br>PAC模式：只在访问国外网站时启用代理<br>全局模式：所有的网站都代理</p>
+<h3 id="锐速加速"><a href="#锐速加速" class="headerlink" title="锐速加速"></a>锐速加速</h3><p>锐速已经停更，对于新的系统内核支持有限，建议改用谷歌的开源方案：Google BBR 对 SS 进行优化加速。效果都差不多的。</p>
+<p>逐行执行下面命令安装 BBR。</p>
+<pre><code>wget — no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh
+chmod +x bbr.sh
+./bbr.sh</code></pre><p>显示 “Press any key to start…” 按回车确认。</p>
+<p>安装完后，按提示重启 VPS，输入 Y 回车重启。稍候 1min 等待重启完成，再重新连接 Xshell。</p>
+<p>重启后输入 <code>lsmod | grep bbr</code> ，出现 tcp_bbr 即说明 BBR 已经启动</p>
+<p>卸载方法：</p>
+<pre><code>./shadowsocks.sh uninstall</code></pre><h3 id="端口检查"><a href="#端口检查" class="headerlink" title="端口检查"></a>端口检查</h3><p><a href="http://tool.chinaz.com/port" target="_blank" rel="noopener">http://tool.chinaz.com/port</a> 国内端口</p>
+<p><a href="https://www.yougetsignal.com/tools/open-ports/" target="_blank" rel="noopener">https://www.yougetsignal.com/tools/open-ports/</a> 国外端口</p>
+<p>若端口被封（显示关闭），可以在vultr上destroy你的vps,然后新建一个，重新配置一下。长久保证的方法还没有找到，目前只有这种解决办法，但是这样有点浪费IP，以后有时间会更新的。</p>
+<h3 id="参考博文"><a href="#参考博文" class="headerlink" title="参考博文"></a>参考博文</h3><p><a href="https://www.seo96.com/zytg/4009.html" target="_blank" rel="noopener">https://www.seo96.com/zytg/4009.html</a></p>
+<p><a href="https://medium.com/@liaoyuqin/vps-shadowsocksr-搭建自己的-vpn-6fc6d5772cc4" target="_blank" rel="noopener">https://medium.com/@liaoyuqin/vps-shadowsocksr-搭建自己的-vpn-6fc6d5772cc4</a></p>
+<p><a href="https://yizibi.github.io/2018/10/24/超详细图文免费搭建VPS,VPN配置/" target="_blank" rel="noopener">https://yizibi.github.io/2018/10/24/超详细图文免费搭建VPS,VPN配置/</a></p>
+<p><a href="https://iyideng.com/truth/vpn-ss-ssr.html" target="_blank" rel="noopener">https://iyideng.com/truth/vpn-ss-ssr.html</a></p>
+<p><a href="http://bwghost.net/131.html" target="_blank" rel="noopener">http://bwghost.net/131.html</a></p>
+
+            <hr>
+          </div>
+          <br>
+          <div>
+            
+            <p>
+              <i class="iconfont icon-tag"></i>
+              
+                <a class="hover-with-bg" href="/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91">科学上网</a>
+              
+            </p>
+            
+              <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" rel="nofollow noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-none d-lg-block col-lg-2 toc-container">
+      
+  <div id="toc">
+    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;目录</p>
+    <div id="tocbot"></div>
+  </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- custom -->
+
+
+<!-- Comments -->
+<div class="col-lg-7 mx-auto nopadding-md">
+  <div class="container comments mx-auto" id="comments">
+    
+  </div>
+</div>
+
+    
+  </main>
+
+  
+    <a class="z-depth-1" id="scroll-top-button" href="#" role="button">
+      <i class="fa fa-chevron-up scroll-top-arrow" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>Hexo</b></a>
+    <i class="iconfont icon-love"></i>
+    <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <b>Fluid</b></a>
+    <br>
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="/lib/jquery/jquery.min.js" ></script>
+<script src="/lib/popper/popper.min.js" ></script>
+<script src="/lib/bootstrap/js/bootstrap.min.js" ></script>
+<script src="/lib/mdbootstrap/js/mdb.min.js" ></script>
+<script src="/js/main.js" ></script>
+
+  <script src="/js/lazyload.js" ></script>
+
+
+  
+    <script src="/lib/tocbot/tocbot.min.js" ></script>
+  
+  <script src="/js/post.js" ></script>
+
+
+  <script src="/lib/prettify/prettify.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      $('pre').addClass('prettyprint linenums');
+      prettyPrint();
+    })
+  </script>
+
+
+  <script src="/lib/typed/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "海外VPS+SSR+锐速搭梯子&nbsp;",
+      ],
+      cursorChar: "❤",
+      typeSpeed: 300,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+  <script src="/lib/anchor/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "false",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      getSearchFile(path);
+      this.onclick = null
+    }
+  </script>
+
+
+</body>
+</html>
