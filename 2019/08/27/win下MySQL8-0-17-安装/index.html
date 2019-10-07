@@ -164,7 +164,7 @@ default-character-set=utf8</code></pre><p>若在配置之前Database目录就已
 <p><code>mysqld --install [服务名]</code><br>服务名指的是给服务命名，可以不写，默认为mysql。</p>
 <p>如果电脑上需要安装多个MySQL服务，就可以用不同的名字区分，如mysql1,mysql2</p>
 <h4 id="6、启动、停止服务与登录"><a href="#6、启动、停止服务与登录" class="headerlink" title="6、启动、停止服务与登录"></a>6、启动、停止服务与登录</h4><p><code>net start mysql</code>    启动MySQL服务<br><code>net stop mysql</code>    停止服务<br><code>mysql -u root -p</code>    登录：这时候会提示输入密码，输入上面初始化时生成的密码，即可成功登录</p>
-<p>若提示<strong>「发生系统错误5 拒绝访问」</strong> fuhao，则用管理员身份打开cmd，重新输入命令即可。</p>
+<p>若提示<strong>「发生系统错误5 拒绝访问」</strong>，则用管理员身份打开cmd，重新输入命令即可。</p>
 <h4 id="7、修改密码"><a href="#7、修改密码" class="headerlink" title="7、修改密码"></a>7、修改密码</h4><p>在登录后执行命令：</p>
 <p><code>ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED WITH mysql_native_password BY &#39;新密码&#39;</code></p>
 
